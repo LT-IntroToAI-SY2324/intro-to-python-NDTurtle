@@ -25,7 +25,10 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    raise NotImplementedError("absolute")
+    if n < 0:
+        return -n
+    else:
+        return n
 
 
 def factorial(n: int) -> int:
@@ -38,7 +41,13 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
-    raise NotImplementedError("factorial")
+    y = 1  
+
+    while n != 0:
+        y *= n
+        n -= 1
+    
+    return y
 
 
 T = TypeVar("T")
@@ -55,7 +64,11 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
-    raise NotImplementedError("every_other")
+    newList = []
+    for x in range(len(lst)):
+        if x % 2 != 0:
+            newList.append(lst[x])
+    return newList
 
 
 def sum_list(lst: List[int]) -> int:
