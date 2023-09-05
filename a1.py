@@ -66,7 +66,7 @@ def every_other(lst: List[T]) -> List[T]:
     """
     newList = []
     for x in range(len(lst)):
-        if x % 2 != 0:
+        if x % 2 == 0:
             newList.append(lst[x])
     return newList
 
@@ -81,7 +81,10 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
-    raise NotImplementedError("sum_list")
+    total = 0
+    for x in range(len(lst)):
+        total += lst[x]
+    return total
 
 
 def mean(lst: List[int]) -> float:
@@ -93,7 +96,12 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    raise NotImplementedError("mean")
+    mean = 0
+    total = 0
+    for x in range(len(lst)):
+        total += lst[x]
+    mean = total/len(lst)
+    return mean
 
 
 def median(lst: List[int]) -> float:
@@ -108,7 +116,13 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    raise NotImplementedError("median")
+    if len(lst) % 2 == 0:
+        total = lst[len(lst) // 2] + lst[len(lst) // 2 - 1]
+        median = total/2
+        return median
+    else:
+        return lst[len(lst) // 2]        
+
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -137,11 +151,7 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
 if __name__ == "__main__":
     assert absolute(-1) == 1, "absolute of -1 failed"
     assert factorial(4) == 24, "factorial of 4 failed"
-    assert every_other([1, 2, 3, 4, 5]) == [
-        1,
-        3,
-        5,
-    ], "every_other of [1,2,3,4,5] failed"
+    assert every_other([1, 2, 3, 4, 5]) == [1, 3, 5], "every_other of [1,2,3,4,5] failed"
     assert sum_list([1, 2, 3]) == 6, "sum_list of [1,2,3] failed"
     assert mean([1, 2, 3, 4, 5]) == 3, "mean of [1,2,3,4,5] failed"
     assert median([1, 2, 3, 4, 5]) == 3, "median of [1,2,3,4,5] failed"
