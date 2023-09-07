@@ -13,11 +13,11 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 ## Reflection Questions
 
 1. What is your initial thoughts about the python programming language?
-
-
+I like it and I think it's pretty intuitive. However there are some things that it's missing that java has, such as having more versatile for loops. 
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
-
+It's similar to java with all the datatypes, logic, etc, but the syntax is different. You don't have to put semicolons at the end of things and overall it's faster to code with python. However, I liked the logical approach of java where you declare variables and objects. 
 
 
 3. What are some things that you learned through this assignment?
+I learned how to do many of the things I knew how to do in java in python.
