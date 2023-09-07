@@ -144,7 +144,15 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
-    raise NotImplementedError("duck_duck_goose")
+    while len(lst) > 2:
+        for i in range(2):
+            lst.append(lst.pop(0))  
+        eliminated = lst.pop(0)
+    return lst
+
+
+# Online Python - IDE, Editor, Compiler, Interpreter
+
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
@@ -157,6 +165,6 @@ if __name__ == "__main__":
     assert median([1, 2, 3, 4, 5]) == 3, "median of [1,2,3,4,5] failed"
 
     names = ["roscoe", "kim", "woz", "solin", "law", "remess"]
-    assert duck_duck_goose(names) == ["roscoe", "law"]
+    assert duck_duck_goose(names) == ["law", "roscoe"]
 
     print("All tests passed!")
